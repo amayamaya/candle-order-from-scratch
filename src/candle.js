@@ -1,11 +1,11 @@
 import React from 'react';
 
-export default function Candle({ scentID, glassId, toppingsId }) {
+export default function Candle({ scentId, glassId, sizeId }) {
   return (
     <div className="candle">
-      <img src={`scent-${scentID}.jpeg`} />
-      <img src={`glass-${glassId}.jpeg`} />
-      <img src={`toppings-${toppingsId}.jpeg`} />
+      <img src={`size-${sizeId}.jpg`} />
+      <img src={`scent-${scentId}.jpg`} />
+      <img src={`glass-${glassId}.jpg`} />
     </div>
   );
 }

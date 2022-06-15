@@ -5,12 +5,15 @@ import ScentDropdown from './ScentDropdown';
 import GlassDropdown from './GlassDropdown';
 import Candle from './candle';
 import CustomerNameInput from './customerNameInput';
+import RequestList from './RequestList';
+import RequestForm from './RequestForm';
 
 function App() {
   const [size, setSize] = useState(2);
   const [scent, setScent] = useState(1);
   const [glass, setGlass] = useState(2);
-  const [customerName, setCustomerName] = useState(['']);
+  const [customerName, setCustomerName] = useState(['someone special']);
+  const [requests, setRequests] = useState(['List Requests Here!']);
 
   return (
     <div className="App">
@@ -22,6 +25,10 @@ function App() {
           <SizeDropdown setSize={setSize} />
           <ScentDropdown setScent={setScent} />
           <GlassDropdown setGlass={setGlass} />
+        </section>
+        <section className="requests">
+          <RequestForm setRequests={setRequests} />
+          <RequestList requests={requests} />
         </section>
       </div>
     </div>

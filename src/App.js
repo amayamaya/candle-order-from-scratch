@@ -9,11 +9,18 @@ import RequestList from './RequestList';
 import RequestForm from './RequestForm';
 
 function App() {
-  const [size, setSize] = useState(2);
+  const [size, setSize] = useState(1);
   const [scent, setScent] = useState(1);
-  const [glass, setGlass] = useState(2);
+  const [glass, setGlass] = useState(1);
   const [customerName, setCustomerName] = useState(['someone special']);
   const [requests, setRequests] = useState(['List Requests Here!']);
+  const [requestInput, setRequestInput] = useState('');
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setRequests([...requests, requestInput]);
+    setRequestInput('');
+  }
 
   return (
     <div className="App">
@@ -27,7 +34,11 @@ function App() {
           <GlassDropdown setGlass={setGlass} />
         </section>
         <section className="requests">
-          <RequestForm setRequests={setRequests} />
+          <RequestForm
+            handleSubmit={handleSubmit}
+            requestInput={requestInput}
+            setRequestInput={setRequestInput}
+          />
           <RequestList requests={requests} />
         </section>
       </div>

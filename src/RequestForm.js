@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-export default function RequestForm({ setRequests, handleSubmit }) {
-  const [requestInput, setRequestInput] = useState('');
+export default function RequestForm({ requestInput, setRequestInput, handleSubmit }) {
   return (
-    <form>
-      <input onChange={(e) => setRequestInput(e.target.value)} />
+    <form onSubmit={handleSubmit}>
+      <input value={requestInput} onChange={(e) => setRequestInput(e.target.value)} />
+      <button>Submit</button>
     </form>
   );
 }

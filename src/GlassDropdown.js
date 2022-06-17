@@ -5,8 +5,8 @@ export default function GlassDropdown({ setGlass }) {
     <div>
       Pick the glass color
       <select onChange={(e) => setGlass(e.target.value)}>
-        <option value="1">Clear</option>
-        <option value="2">Dark</option>
+        <option value="1">Dark</option>
+        <option value="2">Clear</option>
       </select>
     </div>
   );
